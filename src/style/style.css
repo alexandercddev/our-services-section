@@ -1,5 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&display=swap');
+
 
 :root {
     --colorgreen: rgb(6,192,72);
@@ -14,7 +16,7 @@
     margin: 0px;
     padding: 0px;
     color: var(--colorblack);
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Lora', 'Poppins', sans-serif;
 }
 
 body {
@@ -28,6 +30,7 @@ p, span {
 p {
     line-height: 25px;
     font-size: 14px;
+    margin-top: 8px;
 }
 
 h2> span {
@@ -36,15 +39,22 @@ h2> span {
 
 h2 {
     font-size: 30px;
-    line-height: 15px;
+    line-height: 30px;
 }
 
 a {
+    font-size: 13px;
     text-decoration: none;
     font-weight: bold; 
     display: flex;
     align-items: center;
+    margin-top: 20px;
 }
+
+a> svg {
+    margin-left: 5px;
+}
+
 
 section {
     width: 100vw;
@@ -57,13 +67,13 @@ section {
 
 .title {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 50px; 
 }
 
 .question {
     text-transform: uppercase;
     font-size: 13px;
-    line-height: 1px;
+    line-height: 1px;  
 }
 
 .card {
@@ -73,6 +83,19 @@ section {
     border-radius: 8px;
     margin: 15px;
     padding: 30px;
+    animation: card-animate 1s ease 0s 1 normal forwards;
+}
+
+@keyframes card-animate {
+    0% {
+      transform: scaleX(0);
+      transform-origin: 100% 100%;
+    }
+  
+    100% {
+      transform: scaleX(1);
+      transform-origin: 100% 100%;
+    }
 }
 
 .row {
@@ -82,23 +105,32 @@ section {
     justify-content: center;
 } 
 
-iframe {
-    border: none;
-    width: 15px;
-    height: 15px;
+.icon {
+    border: none; 
+    margin-right: 10px;
 }
 
-iframe.icon {
-    width: 50px;
-    height: 50px;
+svg.icon {
+    width: 10px;
+    height: 10px;
 }
 
-svg> path {
-    stroke: var(--colorgreen);
+.icon-container> svg {
+    width: 40px;
+    height: 40px;
+    padding-right: 20px;
+}
+
+.icon-container> svg > svg> path { 
+    fill: var(--colorgreen);
 }
 
 .card-container {
     max-width: 960px;
+}
+
+.card-content {
+    display: flex;   
 }
 
 
@@ -113,4 +145,10 @@ svg> path {
     .card {
         width: 100%;
     }
+}
+
+@media screen and (min-width: 451px) and (max-width: 769px) {
+    section { 
+        padding-top: 50px; 
+    } 
 }

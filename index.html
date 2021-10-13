@@ -19,68 +19,69 @@
         </div>
         <div class="row card-container">
             <div  class="card">
-                <div class="card-contente">
-                    <div class="">
-                        <iframe src="./src/svgs/cut.svg" class="icon cut"></iframe>
+                <div class="card-content">
+                    <div class="icon-container">
+                        <svg class="lateral cut" data-src="./src/svgs/spa.svg"> 
+                        </svg> 
                     </div>
                     <div class="col">
                         <h4>Garden Care</h4>
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo esse magnam officiis ex nisi tempora....
                         </p>
-                        <a href="#">
-                            Read More <iframe src="./src/svgs/chevron-right.svg" class="arrow-right"></iframe>
+                        <a href="https://www.alexandercd.dev/" target="_blank">
+                            Read More <svg data-src="./src/svgs/chevron-right.svg" class="icon arrow-right"></svg>
                         </a>
                     </div>
                 </div>
             </div>
 
             <div  class="card">
-                <div class="card-contente">
-                    <div class="">
-                        <iframe src="./src/svgs/cut.svg" class="icon cut"></iframe>
+                <div class="card-content">
+                    <div class="icon-container">
+                        <svg data-src="./src/svgs/seedling.svg" class="lateral cut"></svg>
                     </div>
                     <div class="col">
-                        <h4>Garden Care</h4>
+                        <h4>Tree Planting</h4>
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo esse magnam officiis ex nisi tempora....
                         </p>
-                        <a href="#">
-                            Read More <iframe src="./src/svgs/chevron-right.svg" class="arrow-right"></iframe>
+                        <a href="https://www.alexandercd.dev/" target="_blank">
+                            Read More <svg data-src="./src/svgs/chevron-right.svg" class="icon arrow-right"></svg>
                         </a>
                     </div>
                 </div>
             </div>
 
             <div  class="card">
-                <div class="card-contente">
-                    <div class="">
-                        <iframe src="./src/svgs/cut.svg" class="icon cut"></iframe>
+                <div class="card-content">
+                    <div class="icon-container">
+                        <svg data-src="./src/svgs/cut.svg" class="lateral cut"></svg>
                     </div>
                     <div class="col">
-                        <h4>Garden Care</h4>
+                        <h4>Cutting Leaves</h4>
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo esse magnam officiis ex nisi tempora....
                         </p>
-                        <a href="#">
-                            Read More <iframe src="./src/svgs/chevron-right.svg" class="arrow-right"></iframe>
+                        <a href="https://www.alexandercd.dev/" target="_blank">
+                            Read More <svg data-src="./src/svgs/chevron-right.svg" class="icon arrow-right"></svg>
                         </a>
                     </div>
                 </div>
             </div>
 
             <div  class="card">
-                <div class="card-contente">
-                    <div class="">
-                        <iframe src="./src/svgs/cut.svg" class="icon cut"></iframe>
+                <div class="card-content">
+                    <div class="icon-container">
+                        <svg data-src="./src/svgs/tint.svg" class="lateral cut"></svg>
                     </div>
                     <div class="col">
-                        <h4>Garden Care</h4>
+                        <h4>Water Gardening</h4>
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo esse magnam officiis ex nisi tempora....
                         </p>
-                        <a href="#">
-                            Read More <iframe src="./src/svgs/chevron-right.svg" class="arrow-right"></iframe>
+                        <a href="https://www.alexandercd.dev/" target="_blank">
+                            Read More <svg data-src="./src/svgs/chevron-right.svg" class="icon arrow-right"></svg>
                         </a>
                     </div>
                 </div>
@@ -89,5 +90,17 @@
 
         </div>
     </section> 
+    <script>
+        /* Cargamos los svg tras la carga del DOM */
+        document.addEventListener('DOMContentLoaded', () => {
+        /* Buscamos cada elemento svg con el atributo "src" */
+        document.querySelectorAll('svg[data-src]').forEach(svg => {
+            /* Cargamos el contenido en su HTML interno */
+            fetch(svg.dataset.src)
+            .then(respuesta => respuesta.text())
+            .then(xml => svg.innerHTML = xml);
+        });
+        });
+    </script>
 </body>
 </html>
