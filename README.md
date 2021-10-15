@@ -1,4 +1,4 @@
-# ![our-services-section](https://raw.githubusercontent.com/alexandercddev/our-services-section/master/src/images/preview.jpg)
+# ![our-services-section](https://raw.githubusercontent.com/alexandercddev/our-services-section/master/src/assets/images/preview.jpg) 
 # Our Services Section
 <table>
 <tr>
